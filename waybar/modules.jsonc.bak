@@ -1,0 +1,149 @@
+{
+
+/*------------------------------------
+    Module-Left:
+	Logo OS:  󰕈  󰐿 󰣭 󰀵  󰌽 󰣨 󰣛     󰣇 󰣇  󰣚 󱄛 󱄛 
+	Workspaces
+	App in use
+-------------------------------------*/
+"custom/logo": {
+    "format": "󰣛",
+    "tooltip": false,
+    "on-click": "rofi -show drun -p 'Apps'",
+    "on-click-right": "swaymsg reload",
+    "tooltip-format": "Sistema: {}"
+},
+
+"sway/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+	"focused": "󰆦",
+	"default": "󰆧",
+        "urgent": "󱓻" 
+    },
+    "disable-scroll": true,
+    "all-outputs": true,
+    "on-click": true
+},
+
+
+"sway/window": {
+    "format": "",
+    "max-length": 60,
+    "icon": true,
+    "icon-size": 20
+},
+
+
+/*------------------------------------
+    Module-Center:
+	Calendar(date)
+	Clock(time)
+	Weather, sometimes wttr can produces issues 
+-------------------------------------*/
+
+"clock#date": { 
+    "format": " {:%a %d  |}",
+    "tooltip-format": "<span>{calendar}</span>",
+    "calendar": {
+	"mode": "month",
+	"mode-mon-col": 3,
+	"on-click-right": "mode",
+	"format": {
+	    "months": "<span color='#ffead3'><b>{}</b></span>",
+	    "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+	    "today": "<span color='#ff3355'><b>{}</b></span>"
+	},
+	"on-click": "tooltip"
+    }
+},
+
+"clock#time": { 
+    "format": "{:%H:%M  } |",
+    "tooltip": true,
+    "interval": 600
+},
+
+"custom/weather": {
+    "format": "{}",
+    "tooltip": true,
+    "interval": 600,
+    "return-type": "json",
+    "interval": 1800, 
+    "exec": "~/.config/waybar/scripts/weather2.sh",
+//    "exec": "curl -s 'https://wttr.in/Guadalajara+Jalisco?format=%c+%t'",
+//    "exec": "curl -s 'https://wttr.in/Guadalajara+Jalisco?format=%t+%c' | sed 's/  / /g' | sed 's/☀️/󰖨/g' | sed 's/☁️/󰖐/g' | sed 's/⛅/󰖕/g' | sed 's/🌧️/󰖖/g' | sed 's/⛈️/󰖓/g' | sed 's/❄️/󰼶/g'",
+    "on-click": "xdg-open https://wttr.in/Guadalajara+Jalisco"
+},
+
+
+/*------------------------------------
+    Module-Right:
+	Brightness
+	Audio
+	Network
+	Bluetooth
+	Battery
+	**Power options* In Process
+-------------------------------------*/
+"backlight": {
+    "format": "{icon} {percent}%",
+    "format": "{icon}",
+    "format-icons": ["", "", "", "", "", "", "", "", ""],
+    "on-scroll-up": "brightnessctl set 2.5%+",
+    "on-scroll-down": "brightnessctl set 2.5%-"
+},
+
+
+"pulseaudio": {
+//    "format": "{icon} {volume}%",
+    "format": "{icon}",
+    "format-muted": "󰖁",
+    "format-icons": {
+	"headphone": "",
+        "phone": "",
+        "portable": "",
+	"default": ["", "", ""]
+    },
+    "on-click": "pavucontrol"
+},
+
+"network": {
+//    "format-wifi": "  {signalStrength}%",
+    "format-wifi": " ",
+    "format-ethernet": "󰈀",
+    "format-disconnected": "󰖪",
+    "on-click": "nm-connection-editor"
+},
+
+"bluetooth": {
+    "format": "󰂯",
+    "format-connected": "󰂱",
+    "format-connected-battery": "󰥉 {device_alias} {device_battery_percentage}%",
+    "format-disabled": "󰂲",
+    "on-click": "blueman-manager"
+},
+
+"battery": {
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-icons": [
+	"",
+	"",
+	"",
+	"",
+	""
+    ],
+    "on-click": "powerprofilesctl set performance",
+    "on-click-right": "powerprofilesctl set power-saver",
+    "on-click-middle": "powerprofilesctl set balanced"
+},
+
+"custom/power": {
+    "format": "⏻",
+    "tooltip": false,
+    "on-click": "wlogout", 
+    "on-click-right": "swaylock"
+}
+
+}

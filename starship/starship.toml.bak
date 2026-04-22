@@ -1,0 +1,208 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+#[┏](color2)\
+#[](bg:color2 fg:color2)\
+#$os\
+#[](bg:color3 fg:color2)\
+#$username\
+#[](bg:color4 fg:color3)\
+
+format = """
+[┏](color3)\
+[](bg:color3 fg:color11)\
+$username\
+[](bg:color4 fg:color3)\
+$directory\
+[](bg:color7 fg:color4)\
+$custom\
+[](bg:color5 fg:color7)\
+$git_branch\
+$git_status\
+[](fg:color5 bg:color6)\
+$c\
+$cpp\
+$rust\
+$golang\
+$nodejs\
+$php\
+$java\
+$kotlin\
+$haskell\
+$python\
+[ ](color6)
+[┗━](color3)\
+$character
+"""
+palette = 'sand'
+
+scan_timeout = 1000
+
+[os]
+disabled = false
+style = "bg:color2 fg:color1"
+
+[os.symbols]
+Raspbian = "󰐿"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛 "
+Alpine = ""
+Amazon = ""
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+
+[username]
+show_always = true
+style_user = "bg:color3 fg:color1"
+style_root = "bg:color3 fg:color1"
+format = '[ $user ]($style)'
+
+[directory]
+style = "bg:color4 fg:color1"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Apps" = "󰀻 "
+"Books" = "󱓷 "
+"Desktop" = " "
+"Developer" = "󰲋 "
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+".config" = " "
+
+[git_branch]
+symbol = ""
+style = "bg:color5"
+format = '[[ $symbol $branch ](fg:color1 bg:color5)]($style)'
+
+[git_status]
+style = "bg:color5"
+format = '[[($all_status$ahead_behind )](fg:color1 bg:color5)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bold color6"
+format = '[[ $symbol( $version) ](fg:color1 bg:color6)]($style)'
+
+[c]
+symbol = " "
+style = "bg:color6"
+format = '[[ $symbol( $version) ](fg:color1 bg:color6)]($style)'
+
+[cpp]
+disabled = false
+symbol = " "
+style = "bg:color6"
+format = '[[ $symbol( $version) ](fg:color1 bg:color6)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:color6"
+format = '[[ $symbol( $version) ](fg:color1 bg:color6)]($style)'
+
+[golang]
+symbol = "󰟓"
+style = "bg:color6"
+format = '[[ $symbol( $version) ](fg:color1 bg:color6)]($style)'
+
+[php]
+symbol = ""
+style = "bg:color6"
+format = '[[ $symbol( $version) ](fg:color1 bg:color6)]($style)'
+
+[java]
+symbol = " "
+style = "bg:color6"
+format = '[[ $symbol( $version) ](fg:color1 bg:color6)]($style)'
+
+[kotlin]
+symbol = ""
+style = "bg:color6"
+format = '[[ $symbol( $version) ](fg:color1 bg:color6)]($style)'
+
+[haskell]
+symbol = ""
+style = "bg:color6"
+format = '[[ $symbol( $version) ](fg:color1 bg:color6)]($style)'
+
+[python]
+symbol = ""
+style = "bg:color6"
+format = '[[ $symbol( $version)(\(#$virtualenv\)) ](fg:color1 bg:color6)]($style)'
+
+[docker_context]
+symbol = ""
+style = "bg:color8"
+format = '[[ $symbol( $context) ](fg:color1 bg:color8)]($style)'
+
+#[custom.docker]
+#command = "echo ''"
+#when = "pgrep dockerd"
+#format = "[[ $output ](fg:color1 bg:color7)]($style)"
+#style = "blue"
+
+#
+#[custom.jenkins]
+#command = "echo ''"
+#when = "docker ps | grep jenkins"
+#format = "[[ $output ](fg:color1 bg:color7)]($style)"
+#style = "yellow"
+
+[custom.ngrok]
+command = "echo ''"
+when = "pgrep ngrok"
+format = "[[  ](fg:color1 bg:color7)]($style)"
+style = "green"
+
+[character]
+disabled = false
+success_symbol = '[❯](bold fg:color3)'
+error_symbol = '[❯](bold fg:color4)'
+vimcmd_symbol = '[❮](bold fg:color5)'
+vimcmd_replace_one_symbol = '[❮](bold fg:color9)'
+vimcmd_replace_symbol = '[❮](bold fg:color9)'
+vimcmd_visual_symbol = '[❮](bold fg:color10)'
+
+[cmd_duration]
+show_milliseconds = true
+format = " in $duration "
+style = "bg:color9"
+disabled = true
+show_notifications = true
+min_time_to_notify = 45000
+
+
+[palettes.watermelon]
+color1 = "#181926"
+color2 = "#B42C41"
+color3 = "#D93B54"
+color4 = "#f15a61"
+color5 = "#71A95A"
+color6 = "#458924"
+color7 = "#aae140"
+color8 = "#209fb5"
+color9 = "#7287fd"
+color10 = "#df8e1d"
+
+# #BF1029 #B42C43 #DE1A24 #D93B54 #FF4F66 #FFB3C1 #007944 #F9F6F4 #A3D368
+
+
+[palettes.sand]
+color1 = "#181926"
+color2 = "#62615c"
+color3 = "#92705e"
+color4 = "#c9ac8a"
+color5 = "#C9735c"
+color6 = "#a84444"
+color7 = "#E8d8be"
+color8 = "#209fb5"
+color9 = "#7287fd"
+color10 = "#df8e1d"
+color11 = "#2a2a2a"

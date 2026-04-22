@@ -1,0 +1,45 @@
+{
+"layer":"top",
+"position": "top",
+"height": 40,
+"margin": "0 0 0 0",
+
+
+"modules-left": [
+    "custom/logo",
+    "sway/workspaces",
+    "sway/window",
+],
+
+"modules-center": [
+    "clock#date",
+    "custom/separator",
+    "clock#time",
+],
+
+//    "custom/weather"
+//        "custom/mic",
+
+"modules-right": [
+    "custom/notifications",
+    "group/hardware",
+    "custom/power",
+],
+
+"group/hardware": {
+    "orientation": "horizontal",
+    "modules": [
+        "backlight",
+        "network",
+        "pulseaudio#output",
+        "bluetooth",
+        "battery",
+    ]
+},
+
+
+//Load Modules
+"include": ["~/.config/waybar/modules.jsonc"],
+
+}
+

@@ -1,0 +1,64 @@
+[global]
+
+monitor = 0
+follow = mouse
+
+width = 360
+height = 220
+
+origin = top-right
+offset = 10x40
+
+scale = 0
+
+notification_limit = 5
+
+progress_bar = true
+progress_bar_height = 6
+
+padding = 10
+horizontal_padding = 10
+text_icon_padding = 10
+
+frame_width = 2
+corner_radius = 12
+
+separator_height = 2
+
+font = JetBrainsMono Nerd Font 12
+
+markup = full
+format = "<b>%s</b>\n%b"
+
+alignment = left
+
+show_age_threshold = 60
+
+icon_position = left
+min_icon_size = 32
+max_icon_size = 64
+
+enable_recursive_icon_lookup = true
+
+transparency = 10
+
+idle_threshold = 120
+
+
+[urgency_low]
+background = "#191919"
+foreground = "#ffffff"
+frame_color = "#989898"
+timeout = 4
+
+[urgency_normal]
+background = "#191919"
+foreground = "#ffffff"
+frame_color = "#cd0c36"
+timeout = 6
+
+[urgency_critical]
+background = "#191919"
+foreground = "#e30f0f"
+frame_color = "#e30f0f"
+timeout = 0

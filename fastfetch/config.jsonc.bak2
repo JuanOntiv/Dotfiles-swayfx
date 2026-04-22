@@ -1,0 +1,113 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+
+    "display": {
+        "color": "", 
+
+        "bar": {
+            "char": {
+                "total": "─"
+            },
+            "width": 10
+        },
+        "key": {
+            "width": 16
+        },
+
+        "separator": " "
+    },
+
+    "modules": [
+        {
+            "type": "title",
+            "key": "{#38;2;255;237;207}  ",
+            "keyWidth": 4,
+            "format": "{#38;2;255;237;207}{1}@{2}"
+        },
+
+        //"break",
+
+        {
+            "type": "custom",
+            "key": "╭────────────╮",
+            "keyColor": "white"
+        },
+        {
+            "key": "{#white}│ {#38;2;217;48;37} Kernel {#keys}  {#white}│",
+            "type": "kernel",
+        },
+        {
+            "key": "{#white}│ {#38;2;234;218;10}{icon} Distro {#keys}  {#white}│",
+            "type": "os",
+        },
+        {
+            "key": "{#white}│ {#38;2;3;151;79} WM {#keys}      {#white}│",
+            "type": "wm",
+        },
+        {
+            "key": "{#white}│ {#38;2;6;129;185}󰏖 Packages {#keys}{#white}│",
+            "type": "packages",
+        },
+
+
+
+        {
+            "key": "{#white}│ {#38;2;156;103;143} Shell    {#keys}{#white}│",
+            "type": "shell",
+        },
+        {
+            "key": "{#white}│ {#38;2;180;227;244} Terminal {#keys}{#white}│",
+            "type": "terminal",
+        },
+
+        {
+            "key": "{#white}│ {#38;2;217;48;37} Terminal {#keys}{#white}│",
+            "type": "terminalfont",
+        },
+
+        {
+            "key": "{#white}│ {#38;2;234;218;10} Font     {#keys}{#white}│",
+            "type": "terminalfont",
+        },
+
+
+        {
+            "key": "{#white}│ {#38;2;3;151;79} CPU      {#keys}{#white}│",
+            "type": "cpu",
+            "format": "{1} [{3} cores]"
+        },
+        {
+            "key": "{#white}│ {#38;2;6;129;185}󰢮 GPU      {#keys}{#white}│",
+            "type": "gpu",
+        },
+        {
+            "key": "{#white}│ {#38;2;156;143;103} RAM      {#keys}{#white}│",
+            "type": "memory",
+        },
+        {
+            "key": "{#white}│ {#38;2;156;103;143} Disk     {#keys}{#white}│",
+            "type": "disk",
+            "format": "{13}{1} / {2} ({3})"
+        },
+      /*  {
+            "type": "command",
+            "key": "│ {#33}󱦟 OS Age  {#keys}│",
+            "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days",
+        },*/
+        {
+            "type": "custom",
+            "key": "├────────────┤",
+            "keyColor": "white"
+        },
+        {
+            "key": "{#white}│ {#38;2;163;160;160} colors   {#keys}{#white}│",
+            "type": "colors",
+            "symbol": "circle"
+        },
+        {
+            "type": "custom",
+            "key": "╰────────────╯",
+            "keyColor": "white"
+        },
+    ]
+}

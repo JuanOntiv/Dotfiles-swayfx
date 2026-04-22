@@ -1,0 +1,50 @@
+format = """$username$custom$hostname $directory $character
+"""
+right_format = "$git_branch"
+
+
+[custom.at]
+command = "echo '@'"
+when = "true"
+format = "[$output](bold red)"
+
+# Icono del sistema operativo
+[os]
+disabled = false
+format = '[$symbol](bold #442244) '
+#format = '\[ [$symbol](bold #C266C3) \]'
+
+[os.symbols]
+Linux = ""
+Gentoo = "󰣨"
+
+# Usuario
+[username]
+show_always = true
+format = '\[ [$user](bold #ffedcf)'
+
+# Host / dominio
+[hostname]
+ssh_only = false
+format = '[$hostname](bold #ffedcf) \]'
+
+# Directorio actual
+[directory]
+format = '[  $path](bold yellow)'
+#truncation_length = 3
+#truncation_symbol = "…/"
+
+# Rama git
+[git_branch]
+symbol = ""
+format = '[ $symbol $branch](bold #675722)'
+#format = '\[[ $symbol $branch](bold white) \]'
+
+# Estado git
+[git_status]
+format = "[ (- $all_status$ahead_behind)](bold red)"
+
+# Prompt
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"

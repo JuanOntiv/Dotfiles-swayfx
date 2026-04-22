@@ -1,0 +1,14 @@
+* {
+    negro: #191919f0;
+    gris: #404040;
+    gris-m: #565656;
+    gris-cl: #d0d0d0;
+    tinto: #7f0000;
+    rojo1: #bd0003;
+    rojo2: #cd0c36;
+    trans1: #00000001;
+    trans2: #00000001;
+
+    border-radius: 8px;
+    font: "JetBrainsMono Nerd Font 12";
+}

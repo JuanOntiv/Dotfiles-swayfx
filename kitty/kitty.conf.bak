@@ -1,0 +1,38 @@
+# =========================
+# FUENTE
+# =========================
+font_family      JetBrainsMono Nerd Font
+bold_font        auto
+italic_font      auto
+bold_italic_font auto
+font_size 	 14.0
+
+background_opacity 0.80
+background_blur 1
+dynamic_background_opacity yes
+
+window_padding_width 10
+
+cursor_shape beam
+cursor_blink_interval 0.5
+
+scrollback_lines 3000
+
+hide_window_decorations yes
+
+map ctrl+shift+c copy_to_clipboard
+map ctrl+shift+v paste_from_clipboard
+
+open_url_with default
+detect_urls yes
+
+enable_audio_bell no
+allow_remote_control yes
+
+copy_on_select yes
+
+# BEGIN_KITTY_THEME
+# Base2Tone Garden Dark
+include current-theme.conf
+# END_KITTY_THEME
+

@@ -1,0 +1,235 @@
+@define-color bg-window rgba(35, 35, 35, 0.9);
+@define-color bg-card rgba(35, 30, 45, 0.8);
+@define-color bg-hover rgba(70, 70, 70, 0.8);
+@define-color bg-hover2 rgba(90, 90, 90, 0.7);
+
+/*@define-color accent-primary #ff0055;   /* Magenta Neón */
+@define-color accent-primary rgba(100, 114, 120, 0.5);   /* Magenta Neón */
+@define-color accent-secondary #ee3333; /* Cyan */
+@define-color accent-warm #ff8c00;      /* Naranja */
+
+@define-color text-main #ffffff;
+@define-color text-dim #b0b0b0;
+
+@define-color critical-bg #cc241d;
+@define-color warning-bg #fabd2f;
+
+* {
+    font-family: "Noto Emoji", sans-serif;
+}
+
+
+/*-----------------------------------------------
+ * VENTANA PRINCIPAL (CONTROL CENTER)
+ *-----------------------------------------------*/
+.control-center {
+    background: @bg-window;
+    border: 2px solid @accent-primary;
+    border-radius: 8px;
+    margin: 16px;
+}
+
+.control-center-list {
+    background: transparent;
+}
+
+
+/* Título y Header */
+.widget-title {
+    color: @accent-secondary;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.widget-title > button {
+    background: @bg-card;
+    color: @text-main;
+    border: 1px solid @accent-secondary;
+    border-radius: 8px;
+    padding: 5px 10px;
+    transition: all 200ms ease-in-out;
+}
+
+.widget-title > button:hover {
+    background: @accent-secondary;
+    color: @bg-window;
+    box-shadow: 0 0 8px @accent-secondary;
+}
+
+
+/*--------------------------------------------- 
+ * Widget Do Not Disturb 
+ * ------------------------------------------*/
+.widget-dnd {
+    margin: 8px;
+    font-size: 1.1rem;
+    color: @text-main;
+}
+
+.widget-dnd > switch {
+    background: @bg-card;
+    font-size: initial;
+    border: 1px solid @accent-primary;
+    border-radius: 16px;
+    transition: all 200ms ease;
+}
+
+
+.widget-dnd > switch:hover {
+    background: @bg-hover2;
+}
+
+.widget-dnd > switch:checked {
+    background: @accent-secondary;
+}
+
+.widget-dnd > switch:checked:hover {
+    background: @bg-hover2;
+}
+
+.widget-dnd > switch slider {
+    background: @text-main;
+    border-radius: 10px;
+    margin: 2px;
+}
+
+
+/* --- WIDGET MPRIS (REPRODUCTOR) --- */
+.widget-mpris {
+    background: @bg-card;
+    border-radius: 8px;
+    margin: 0;
+    margin-bottom: 0;
+    min-height: 180px;
+}
+
+.widget-mpris-player {
+    padding: 0px;
+    margin: 8px;
+}
+
+.widget-mpris-title {
+    font-weight: bold;
+    color: @text-main;
+    font-size: 1.1rem;
+}
+
+.widget-mpris-subtitle {
+    color: @text-dim;
+}
+
+.widget-mpris-album-art {
+    box-shadow: none;
+    border-radius: 8px;
+}
+
+/* Botones de control MPRIS */
+.widget-mpris-player button {
+    color: @text-main;
+    font-size: 1.2rem;
+    background: transparent;
+    padding: 2px;
+}
+
+.widget-mpris-player button:hover {
+    background: @bg-card;
+    color: @accent-secondary;
+    border-radius: 20px;
+}
+
+
+
+/*------------------------------------------------------ 
+ *  NOTIFICACIONES 
+ * ---------------------------------------------------*/
+.notification {
+    background: @bg-window;
+    border: 1px solid @accent-primary;
+    border-radius: 8px;
+    margin: 8px;
+    padding: 10px;
+    transition: transform 0.2s ease;
+}
+
+.notification:hover {
+    background: @bg-hover;
+    border-color: @accent-primary;
+}
+
+.notification-content {
+    margin: 0px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+
+.summary {
+    margin: 0 0 3px 10px;
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+
+.body {
+    margin-left: 10px;
+    font-size: 0.9rem;
+    font-family: "JetBrainsMono NF SemiBold";
+}
+
+
+.notification-content image {
+    border-radius: 8px;
+    margin-right: 20px;
+    min-width: 32px;
+    min-height: 32px;
+}
+
+.notification-row .notification-background .notification .notification-default-action .notification-content .text-box .time {
+    font-weight: 600;
+    font-size: 1.0rem;
+    background: transparent;
+    color: @text-main;
+    text-shadow: none;
+    margin-right: 0px;
+}
+
+
+.close-button {
+  background: @text-dim;
+  color: @text-main;
+  text-shadow: none;
+  padding: 0;
+  border-radius: 100%;
+  margin-top: 0px;
+  margin-right: 0px;
+  border: 1px @accent-primary;
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.close-button:hover {
+  background: @accent-secondary;
+  color: @text-main;
+}
+
+.notification-row {
+  background: none;
+  outline: none;
+}
+
+.notification-row .notification-background .notification .notification-default-action:hover {
+  background: @bg-hover;
+}
+
+.notification-row .notification-background .notification .notification-default-action .notification-content .image {
+    border-radius: 100px;
+    -gtk-icon-filter: none;
+    -gtk-icon-size: 64px;
+    margin: 6px;
+}
+
+.notification-row .notification-background .notification .notification-default-action .notification-content .app-icon {
+    margin: 8px 0 0 12px;
+}
+

@@ -1,0 +1,225 @@
+{
+/*------------------------------------
+Module-Left:
+    Logo OS:  󰕈  󰐿 󰣭 󰀵  󰌽 󰣨 󰣛     󰣇 󰣇  󰣚 󱄛 󱄛 
+    Workspaces
+    App in use
+-------------------------------------*/
+    "custom/logo": {
+        "format": "󰣨",
+        "tooltip": false,
+        //"on-click": "rofi -show drun -p 'Apps'",
+        "on-click": "rofi -show run -modes combi",
+        "on-click-right": "swaymsg reload",
+        "tooltip-format": "Sistema: {}"
+    },
+
+    "sway/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "focused": "󰆦",
+            "default": "󰆧",
+            "urgent": ""
+        },
+        "disable-scroll": false,
+        "all-outputs": true,
+        "on-click": true
+    },
+
+    "sway/window": {
+        "format": "",
+        "max-length": 60,
+        "icon": true,
+        "icon-size": 26,
+        "tooltip": true,
+        "tooltip-format": "{}",
+        "format-icons": {
+            "lv": "󰀲",
+            "nv": "󰀲",
+            "default": "ㅤ"
+        },
+        "rewrite": {
+            "LazyVim - (.*)": "LazyVim",
+            "nv (.*)": "nvim"
+        }
+    },
+
+
+/*------------------------------------
+Module-Center
+    Calendar(clock#date)
+	  Clock(clock#time)
+	  Weather, sometimes wttr can produces issues (disable)
+-------------------------------------*/
+    "clock#date": {
+        "format": " {:%a %d  }",
+        "tooltip-format": "<span>{calendar}</span>",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "weeks-pos": "left",
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "days": "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks": "<span color='#99ffdd'><b>{}-</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click": "mode",
+            "on-click-right": "mode"
+        }
+    },
+
+    "custom/separator": {
+        "format": "|",
+        "tooltip": false
+    },
+
+    "clock#time": {
+        "format": "{:%H:%M}  ",
+        "interval": 2,
+        "timezones": [
+            "America/Mexico_City",
+            "America/Chicago",
+            "America/Los_Angeles",
+            "Europe/Madrid",
+            "Asia/Shanghai"
+        ],
+        "tooltip": true,
+        "tooltip-format": "Timezones:\n{tz_list}"
+        //"tooltip-format": "{output}",
+        //"exec": "~/.config/waybar/scripts/timezones.sh",
+        //"return-type": "json"
+    },
+
+    "custom/weather": {
+        "format": "{}",
+        "tooltip": true,
+        "return-type": "json",
+        "interval": 1800,
+        "exec": "~/.config/waybar/scripts/weather2.sh",
+        //    "exec": "curl -s 'https://wttr.in/Guadalajara+Jalisco?format=%t+%c' | sed 's/  / /g' | sed 's/☀️/󰖨/g' | sed 's/☁️/󰖐/g' | sed 's/⛅/󰖕/g' | sed 's/🌧️/󰖖/g' | sed 's/⛈️/󰖓/g' | sed 's/❄️/󰼶/g'",
+        "on-click": "xdg-open https://wttr.in/Guadalajara+Jalisco"
+    },
+
+
+
+/*------------------------------------
+Module-Right:
+    Brightness
+	  Audio
+	  Network
+	  Bluetooth
+	  Battery
+	  **Power options* In Process
+-------------------------------------*/
+    
+    "custom/mic": {
+        "exec": "~/.config/waybar/scripts/mic.sh",
+        "interval": 1
+    }, 
+
+
+    "custom/notifications": {
+        "exec": "swaync-client -swb",
+        "return-type": "json",
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "󰂞",
+            "none": "",
+            "dnd-notification": "",
+            "dnd-none": ""
+        },
+        "on-click": "swaync-client -t",
+        "on-click-right": "swaync-client -d",
+        "escape": true
+    },
+
+    "backlight": {
+        "format": "{icon}",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "tooltip-format": "{icon} Brightness: {percent}%",
+        "on-scroll-up": "brightnessctl set 5%+",
+        "on-scroll-down": "brightnessctl set 5%-"
+    },
+
+    "pulseaudio#output": {
+        "format": "{icon}",
+        "format-muted": "󰖁",
+        "format-icons": {
+            "headphone": "",
+            "phone": "",
+            "portable": "",
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        },
+        "on-click": "pavucontrol",
+        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "scroll-step": 2.5,
+        "tooltip-format": "{icon} <span color='#99ffdd'>Volumen:</span> <span color='#ffead3'>{volume}%</span>"
+    },
+
+    "network": {
+        "format-wifi": " ",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "󰖪",
+        "on-click": "kitty -e nmtui",
+        "tooltip-format": "󰀂 <span color='#99ffdd'>Net:</span> <span color='#ffead3'>{essid}</span>\n󰢾 <span color='#99ffdd'>Signal:</span> <span color='#ffead3'>{signalStrength}%</span>\n󰖈 <span color='#99ffdd'>IP:</span> <span color='#ffead3'>{ipaddr}</span>\n <span color='#99ffdd'>Dev:</span> <span color='#ffead3'>{ifname}</span>",
+        "on-scroll-up": "", 
+        "on-scroll-down": ""
+    },
+
+    "bluetooth": {
+        "format": "󰂯",
+        "format-connected": "󰂱",
+        "format-connected-battery": "󰥉 {device_alias} {device_battery_percentage}%",
+        "format-disabled": "󰂲",
+        "on-click": "blueman-manager",
+        "tooltip-format": " Bluetooth: {status}\n󰾰 {num_connections} devices connected",
+        "on-scroll-up": "", 
+        "on-scroll-down": ""
+    },
+
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "on-click": "powerprofilesctl set performance",
+        "on-click-right": "powerprofilesctl set power-saver",
+        "on-click-middle": "powerprofilesctl set balanced",
+        //"tooltip-format": "󰂁 Capacity: {capacity}% \n󰔟 Uptime: {time}",
+        "tooltip-format": "󰄌 <span color='#99ffdd'>Watts:</span> <span color='#ffead3'>{power}</span>  \n󰔟 <span color='#99ffdd'>Uptime:</span> <span color='#ffead3'>{time}</span> \n󱈑 <span color='#99ffdd'>Health:</span> <span color='#ffead3'>{health}%</span>",
+        "on-scroll-up": "", 
+        "on-scroll-down": ""
+    },
+
+    "custom/power": {
+        "format": "⏻",
+        "tooltip": false,
+        "on-click": "~/.config/rofi/powermenu/powermenu.sh",
+        "on-click-right": "swaylock"
+    }
+
+}

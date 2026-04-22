@@ -1,0 +1,193 @@
+@define-color background rgba(55, 55, 55, 0.95);
+@define-color background2 rgba(90, 90, 90, 0.90);
+@define-color background3 rgba(20, 20, 20, 0.85);
+@define-color font-color #ffffff;
+@define-color red1 #ee4444;
+@define-color red2 #ff0000;
+@define-color red3 #dB5255;
+@define-color logo #C266C3;
+@define-color logo2 #9E56AF;
+/* @define-color logo #0873B9;
+*/
+@define-color urgent #FFD202;
+
+/* ---------------------------------------
+ * General Configurations
+ * ------------------------------------------*/
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "Noto Emoji";
+    font-size: 16px;
+}
+
+window#waybar {
+    background: rgba(20,20,20,0.01);
+    color: @font-color;
+}
+
+tooltip {
+    all: unset;
+    background: @background3;
+    border: 1px solid rgba(100, 114, 125, 0.5);
+    border-radius: 8px;
+}
+
+/*-------------------------------------
+ * Logo
+ * Workspaces
+ * App(window)
+ ----------------------------------------*/
+#custom-logo {
+    font-size: 20px;
+    background: @background;
+    color: @logo;
+    padding: 0px 16px 0 16px;
+    margin: 8px 0 0 8px;
+    border-radius: 8px 0 0 8px;
+}
+
+#workspaces {
+    background: @background;
+    margin: 8px 0 0 0;
+    padding: 4px 10px 4px 0;
+    border-radius: 0 8px 8px 0;
+    transition: all 0.5s ease-in-out;
+}
+
+#workspaces button {
+    padding: 0 8px 0 8px;
+    border-radius: 8px;
+    background: transparent;
+    color: @font-color;
+    border: 0;
+    transition: all 0.5s ease-in-out;
+    box-shadow: none;
+}
+
+#workspaces button.urgent {
+    color: @urgent;
+    transition: all 0.5s ease-in-out;
+}
+
+#workspaces button.focused {
+    background: @background2;
+    margin-left: 4px;
+    border-radius: 7px;
+    min-width: 50px;
+    transition: all 0.5s ease-in-out;
+}
+
+#window {
+    margin: 4px 0 4px 10px;
+    padding: 4px 0 0 0;
+}
+
+
+/*----------------------------------------
+ * Calendar
+ * Separator "|"
+ * Clock
+ * Weather --disable
+ * Future notifications****
+ -----------------------------------------*/
+#clock.date{
+    background: @background;
+    margin: 8px 0 0;
+    padding: 4px;
+    border-radius: 8px 0 0 8px;
+}
+
+#clock.time {
+    background: @background;
+    margin: 8px 12px 0 0;
+    padding: 4px 8px 4px 8px;
+    border-radius: 0 8px 8px 0;
+}
+
+#custom-weather {
+    background: @background;
+    border-radius: 0 8px 8px 0;
+    padding: 4px 12px 4px 0;
+    margin: 8px 0 0 0;
+}
+
+/*---------------------------------------
+ * Notifications
+ * Hardware:
+ *  Brightness
+ *	Network
+ *	Audio
+ *	Bluetooth
+ *	Battery
+ *	Power
+ -----------------------------------------*/
+#custom-notifications {
+    padding: 0;
+    margin: 8px 16px 0 0;
+    color: @font-color;
+}
+
+box#hardware {
+    background-color: @background;
+    border-radius: 8px 0 0 8px;
+    margin: 8px 0 0 0;
+    padding: 4px 4px 4px 4px;
+}
+
+#backlight, #network, #pulseaudio, #bluetooth, #battery {
+    background: transparent;
+    border: none;
+    margin: 0;
+    padding: 0 10px;
+}
+
+#battery {
+    padding-right: 0;
+}
+
+#custom-power {
+    background-color: @background;
+    color: @red1;
+    padding: 0 16px 0 12px;
+    margin: 8px 8px 0 0;
+    border-radius: 0 8px 8px 0;
+}
+
+/*-----------------------------------------
+ * separator
+ * -----------------------------------------*/
+#custom-separator {
+    background-color: @background;
+    margin: 8px 0 0 0;
+}
+
+/*-------------------------------------
+ * Transitions
+ * ----------------------------------------*/
+#workspaces button:hover,
+#window:hover,
+#clock.date:hover,
+#clock.time:hover,
+#custom-weather:hover,
+#custom-notifications:hover,
+#backlight:hover,
+#network:hover, 
+#pulseaudio:hover, 
+#bluetooth:hover, 
+#battery:hover{
+    color: @red1;
+    transition: all 0.5s ease-in-out;
+}
+
+#custom-logo:hover{
+    background: @logo2;
+    color: @font-color;
+    transition: all 0.5s ease-in-out;
+}
+
+#custom-power:hover{
+    background: @red3;
+    color: @font-color;
+    transition: all 0.5s ease;
+}
+
