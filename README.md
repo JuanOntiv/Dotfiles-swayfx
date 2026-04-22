@@ -1,10 +1,8 @@
 # Dotfiles
----
 My personal Linux configuration files
 
 
 ## Stack
----
 - WM: Swayfx
 - Lock: Hyprlock
 - Notifications: Swaync
