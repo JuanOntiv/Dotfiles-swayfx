@@ -1,4 +1,4 @@
-format = """$username$custom$hostname $directory $character
+format = """$python$username$custom$hostname $directory $character
 """
 right_format = "$git_branch"
 
@@ -37,7 +37,7 @@ format = '[  $path](bold yellow)'
 # Rama git
 [git_branch]
 symbol = ""
-format = '[ $symbol $branch](bold #675722)'
+format = '[ $symbol $branch](bold #766722)'
 #format = '\[[ $symbol $branch](bold white) \]'
 
 # Estado git
@@ -48,3 +48,9 @@ format = "[ (- $all_status$ahead_behind)](bold red)"
 [character]
 success_symbol = "[❯](bold green)"
 error_symbol = "[❯](bold red)"
+
+
+[python]
+symbol = " "
+format = '\([$symbol$virtualenv]($style)\) '
+style = "#C266C3"

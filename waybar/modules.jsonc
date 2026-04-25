@@ -197,14 +197,14 @@ Module-Right:
     },
 
     "battery": {
-        "format": "{icon} {capacity}%",
+        "format": "{icon}{capacity}%",
         "format-charging": " {capacity}%",
         "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
+            " ",
+            " ",
+            " ",
+            " ",
+            " "
         ],
         "on-click": "powerprofilesctl set performance",
         "on-click-right": "powerprofilesctl set power-saver",
