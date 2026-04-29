@@ -38,7 +38,7 @@ tooltip {
  * App(window)
  ----------------------------------------*/
 #custom-logo {
-    font-size: 20px;
+    font-size: 23px;
     background: @background;
     color: @logo;
     padding: 0px 16px 0 16px;

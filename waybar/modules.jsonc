@@ -6,7 +6,7 @@ Module-Left:
     App in use
 -------------------------------------*/
     "custom/logo": {
-        "format": "󰣨",
+        "format": "",
         "tooltip": false,
         //"on-click": "rofi -show drun -p 'Apps'",
         "on-click": "rofi -show run -modes combi",

@@ -1,12 +1,13 @@
 format = """$python$username$custom$hostname $directory $character
 """
-right_format = "$git_branch"
+right_format = "$git_branch $sudo"
 
 
 [custom.at]
 command = "echo '@'"
 when = "true"
 format = "[$output](bold red)"
+unsafe_no_escape = true
 
 # Icono del sistema operativo
 [os]
@@ -51,6 +52,11 @@ error_symbol = "[❯](bold red)"
 
 
 [python]
-symbol = " "
-format = '\([$symbol$virtualenv]($style)\) '
+format = '[$virtualenv]($style) '
 style = "#C266C3"
+
+[sudo]
+disabled = false
+symbol = '󱚫 '
+format = "[$symbol]($style)"
+style = "bold #662656"

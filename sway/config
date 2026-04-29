@@ -58,7 +58,7 @@ blur_passes 2
 
 default_dim_inactive 0.1
 
-corner_radius 12
+corner_radius 10
 
 ### Idle configuration
 #
