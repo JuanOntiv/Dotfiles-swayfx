@@ -1,0 +1,97 @@
+window {
+    background-color: rgba(20, 20, 20, 0.9);
+    background-image: url("1346558.png");
+    background-size: cover;
+    background-position: center;
+}
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    all: unset;
+}
+
+entry {
+    font-size: 18px;
+    border-radius: 12px;
+    padding: 12px;
+    color: white;
+    background: rgba(0,0,0,0.5);
+}
+
+label {
+    color: white;
+    font-size: 24px;
+}
+
+#clock-label {
+    font-weight: bold;
+    font-size: 110px;
+    color: rgba(255, 255, 255, 0.95);
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#date-label {
+    font-family: "HackNerdFontPropo";
+    font-weight: bold;
+    font-style: italic;
+    font-size: 22px;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+#input-field {
+    min-width: 250px;
+    min-height: 15px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgba(100, 120, 114, 0.5);
+    border-radius: 8px;         /* hyprlock no indica redondeo, lo dejamos plano */
+    padding: 7px;
+    
+    /* Colores de fondo y texto */
+    background-color: rgba(35, 35, 35, 0.9);
+    color: rgba(255, 255, 255, 0.9);
+    
+    /* Fuente */
+    font-family: "JetBrainsMono Medium", monospace;
+    font-size: 1.2em;
+    
+    /* Ajuste de posición vertical (desplazado hacia abajo) */
+    margin-top: 400px;   /* simula position = 0, -400; (negativo abajo) */
+    margin-right: 100px;
+    margin-bottom: 0px;
+    
+    /* Efecto de puntos para la contraseña (gtklock no soporta dots_size/spacing) */
+    /* Por defecto muestra asteriscos, no podemos cambiarlo fácilmente */
+}
+
+#input-field:focus {
+    border: none;
+}
+
+#input-label {
+    color: rgba(0,0,0,0.01);
+}
+
+
+
+#unlock-button {
+    min-height: 15px;
+    padding: 0;
+    margin-right:100px;
+    background: transparent;
+    color: rgba(0,0,0,0.01);
+    font-family: "JetBrainsMono Medium", monospace;
+    border-radius: 8px;         /* hyprlock no indica redondeo, lo dejamos plano */
+    font-size: 0.3em;
+} 
+
+#error-label {
+    color: red;
+}
+
+#warning-label {
+    color: yellow;
+}
+
+

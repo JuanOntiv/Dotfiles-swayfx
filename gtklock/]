@@ -1,0 +1,9 @@
+[main]
+modules=clock;powerbar
+
+[input-field]
+placeholder=Password...
+hide_input=true
+
+[label]
+text=Locked
