@@ -1,0 +1,104 @@
+* {
+    negro: #191919f0;
+    gris: #404040;
+    gris-m: #565656;
+    gris-cl: #d0d0d0;
+    tinto: #7f0000;
+    rojo1: #bd0003;
+    rojo2: #cd0c36;
+    trans1: #00000001;
+    trans2: #00000001;
+
+    border-radius: 8px;
+    font: "JetBrainsMono Nerd Font 12";
+}
+
+window {
+    width: 460px;
+    height: 370px;
+    background-color: @negro;
+    border-color: @tinto;
+    border: 2px;
+    border-radius: 10px;
+    padding: 16px;
+}
+
+mainbox {
+   spacing: 12px;
+   background-color: @trans1;
+}
+
+inputbar {
+    background-color: #aa000050;
+    padding: 5px;
+    border: 2px;
+    border-color: @rojo1;
+    border-radius: 10px;
+}
+
+entry {
+    background-color: @trans1;
+    text-color: @gris-cl;
+    placeholder: "󰍉 Type to search:";
+    padding: 6px;
+    scrollbar: false;
+}
+
+listview {
+    background-color: @trans1;
+    lines: 8;
+    spacing: 6px;
+    scrollbar: false;
+}
+
+element {
+    background-color: @trans1;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+element selected {
+    background-color: @tinto;
+    text-color: #ffffff;
+}
+
+element-icon {
+    size: 26px;
+    padding: 2px;
+    background-color: @trans1;
+}
+
+element-text {
+    text-color: @gris-cl;
+    padding: 2px;
+    background-color: @trans1;
+}
+
+element-meta {
+    enabled: false;
+}
+
+configuration {
+    drun-display-format: "{name}";
+    show-icons: true;
+}
+
+
+prompt {
+    enabled: false;
+    background-color: @trans1;
+}
+
+scrollbar {
+    background-color: @tinto;
+    handle-color: @negro;
+    handle-width: 10px;
+    border-radius: 6px;
+}
+case-indicator {
+    background-color: @trans1;
+}
+
+mode-switcher {
+    background-color: @trans1;
+}

@@ -1,9 +1,15 @@
 configuration {
-    modi: "drun,run,window";
+    modi: "drun,run,filebrowser,keys";
     show-icons: true;
+    display-drun:               "";
+    display-run:                "";
+    display-filebrowser:        "";
+    display-ssh:             "";
+    display-keys:             "";
     terminal: "kitty";
     font: "JetBrainsMono Nerd Font 12";
-    drun-display-format: "{icon} {name}";
+    drun-display-format:        "{name}\n[<span weight='light' size='small'><i>({generic})</i></span>]";
+	window-format:              "Class : {c}\nWorkspace : {w}";
 }
 
 @theme "~/.config/rofi/theme.rasi"

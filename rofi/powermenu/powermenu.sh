@@ -53,13 +53,14 @@ run_cmd() {
 	selected="$(confirm_exit)"
 	if [[ "$selected" == "$yes" ]]; then
 		if [[ $1 == '--shutdown' ]]; then
-			systemctl sudo poweroff
+            loginctl loginctl
+			# systemctl poweroff
 		elif [[ $1 == '--reboot' ]]; then
-			systemctl sudo reboot
+			loginctl reboot
 		elif [[ $1 == '--suspend' ]]; then
 			mpc -q pause
 			amixer set Master mute
-			systemctl suspend
+			loginctl suspend
 		elif [[ $1 == '--logout' ]]; then
 			if [[ "$DESKTOP_SESSION" == 'openbox' ]]; then
 				openbox --exit
@@ -86,6 +87,8 @@ case ${chosen} in
 		    hyprlock
 		elif [[ -x '/usr/bin/swaylock' ]]; then
 		    swaylock
+		elif [[ -x '/usr/bin/gtklock' ]]; then
+		    gtklock
 		fi
         ;;
     $suspend)

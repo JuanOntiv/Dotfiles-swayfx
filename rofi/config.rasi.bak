@@ -1,0 +1,9 @@
+configuration {
+    modi: "drun,run,window";
+    show-icons: true;
+    terminal: "kitty";
+    font: "JetBrainsMono Nerd Font 12";
+    drun-display-format: "{icon} {name}";
+}
+
+@theme "~/.config/rofi/theme.rasi"
