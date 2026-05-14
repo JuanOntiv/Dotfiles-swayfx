@@ -11,12 +11,17 @@ set $term kitty
 set $rofi_cmd rofi \
         -terminal '$term'
 # set $menu $rofi_cmd -show combi -combi-modes drun -p "Apps"#run -modes combi
-set $menu $rofi_cmd -show drun -p "Apps"#run -modes combi
+set $menu $rofi_cmd -show drun -p "Apps" 
+# run -modes combi
 
 ### Output configuration
 # Requires: desktop-backgrounds-compat, swaybg, jxl-pixbuf-loader
 output * bg ~/.config/.images/1346558.png fill
 
+
+exec pipewire
+exec pipewire-pulse 
+exec wireplumber
 
 
 
@@ -32,7 +37,13 @@ exec_always export GTK_THEME=Vimix-dark-dober
 exec_always export XDG_CURRENT_DESKTOP=sway
 exec_always export XDG_SESSION_TYPE=wayland
 exec_always export GTK_USE_PORTAL=1
+# exec_always dbus-update-activation-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+exec_always /usr/libexec/xdg-desktop-portal-wlr
+exec_always xdg-desktop-portal-wlr
+exec_always dbus-update-activation-environment --all
 exec_always dbus-update-activation-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+
+
 
 # Example configuration:
 #   	output HDMI-A-1 resolution 1920x1080 position 1920,0
@@ -65,10 +76,10 @@ corner_radius 10
 # Example configuration:
 
 exec swayidle -w \
-        timeout 300 'hyprlock' \
+        timeout 300 'gtklock' \
         timeout 600 'swaymsg "output * power off"' \
 	      resume 'swaymsg "output * power on"' \
-        before-sleep 'hyprlock'
+        before-sleep 'gtklock'
 #
 # exec swayidle -w \
 #          timeout 300 'swaylock -f -c 000000' \
@@ -291,7 +302,7 @@ client.focused_inactive #313244 #1e1e2e #aaaaaa #313244 #313244
 client.urgent           #f38ba8 #1e1e2e #ffffff #f38ba8 #f38ba8
 
 set $cursor_size 32
-seat seat0 xcursor_theme capitaine-cursors-light 32
+seat seat0 xcursor_theme Vimix-White 32
 # Include configs from 3 locations:
 #  - /usr/share/sway/config.d
 #  - /etc/sway/config.d

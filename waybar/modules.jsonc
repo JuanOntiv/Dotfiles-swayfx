@@ -8,8 +8,8 @@ Module-Left:
     "custom/logo": {
         "format": "",
         "tooltip": false,
-        //"on-click": "rofi -show drun -p 'Apps'",
-        "on-click": "rofi -show run -modes combi",
+        "on-click": "rofi -show drun -p 'Apps'",
+        //"on-click": "rofi -show run -modes combi",
         "on-click-right": "swaymsg reload",
         "tooltip-format": "Sistema: {}"
     },
@@ -219,7 +219,7 @@ Module-Right:
         "format": "⏻",
         "tooltip": false,
         "on-click": "~/.config/rofi/powermenu/powermenu.sh",
-        "on-click-right": "swaylock"
+        "on-click-right": "gtklock"
     }
 
 }

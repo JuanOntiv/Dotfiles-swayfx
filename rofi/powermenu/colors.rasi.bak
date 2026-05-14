@@ -1,0 +1,20 @@
+/**
+ *
+ * Author : Levi Lacoss (fishyfishfish55)
+ * Github : @fishyfishfish55
+ *
+ * Colors
+ **/
+
+* {
+    background:     #191919f0;
+    background2:     #19191901;
+    background-alt: #404040;
+    foreground:     #7f0000;
+    selected:       #bd0003;
+    active:         #cd0c36;
+    urgent:         #ff4444;
+
+
+    font: "JetBrainsMono Nerd Font 12";
+}
