@@ -186,13 +186,12 @@
 }
 
 .notification-row .notification-background .notification .notification-default-action .notification-content .text-box .time {
-    font-family: "FiraCode Nerd Font Propo", "Noto Emoji", sans-serif;
     font-weight: 600;
-    font-size: 0.85rem;
+    font-size: 1.0rem;
     background: transparent;
     color: @text-main;
     text-shadow: none;
-    margin-right: 20px;
+    margin-right: 0px;
 }
 
 
