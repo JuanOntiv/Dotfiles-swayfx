@@ -29,7 +29,7 @@ exec wireplumber
 exec_always waybar
 exec_always pkill waybar && waybar
 exec_always swaync
-exec_always blueman-applet
+# exec_always blueman-applet
 exec_always gammastep
 #exec_always swaymsg output eDP-1 disable
 exec_always export GTK_THEME=Vimix-dark-dober
@@ -38,8 +38,8 @@ exec_always export XDG_CURRENT_DESKTOP=sway
 exec_always export XDG_SESSION_TYPE=wayland
 exec_always export GTK_USE_PORTAL=1
 # exec_always dbus-update-activation-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
-exec_always /usr/libexec/xdg-desktop-portal-wlr
-exec_always xdg-desktop-portal-wlr
+#exec_always /usr/libexec/xdg-desktop-portal-wlr
+#exec_always xdg-desktop-portal-wlr
 exec_always dbus-update-activation-environment --all
 exec_always dbus-update-activation-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
@@ -76,10 +76,12 @@ corner_radius 10
 # Example configuration:
 
 exec swayidle -w \
-        timeout 300 'gtklock' \
         timeout 600 'swaymsg "output * power off"' \
-	      resume 'swaymsg "output * power on"' \
-        before-sleep 'gtklock'
+	resume 'swaymsg "output * power on"' \
+	before-sleep 'gtklock'
+
+# timeout 900 'loginctl suspend'
+#before-sleep 'gtklock'
 #
 # exec swayidle -w \
 #          timeout 300 'swaylock -f -c 000000' \
@@ -243,7 +245,8 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-# Volumen
+
+# Volume
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +2%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -2%
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
@@ -251,11 +254,11 @@ bindsym Alt+F1 exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym Alt+F2 exec pactl set-sink-volume @DEFAULT_SINK@ -3%
 bindsym Alt+F3 exec pactl set-sink-volume @DEFAULT_SINK@ +3%
 
-# Brillo
-bindsym XF86MonBrightnessUp exec brightnessctl set +10%
-bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
-bindsym Alt+F4 exec brightnessctl set 10%-
-bindsym Alt+F5 exec brightnessctl set +10%
+# Brightness
+bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym Alt+F4 exec brightnessctl set 5%-
+bindsym Alt+F5 exec brightnessctl set 5%+
 
 # Music
 bindsym Alt+F7 exec playerctl previous 
@@ -269,7 +272,7 @@ bindsym Print exec sh -c 'FILE="$HOME/Pictures/Screenshots/$(date --iso-8601=ns)
 bindsym Shift+Print exec sh -c 'FILE="$HOME/Pictures/Screenshots/$(date --iso-8601=ns).png" && grim -g "$(slurp)" "$FILE" && wl-copy < "$FILE" && notify-send -i "$FILE" "Screenshot taken successfully!"'
 
 
-# Power
+# Poweroff
 bindsym XF86PowerOff exec ~/.config/rofi/powermenu/powermenu.sh
 bindsym $mod+Alt+P exec ~/.config/rofi/powermenu/powermenu.sh
 
@@ -278,10 +281,11 @@ bindsym $mod+Alt+P exec ~/.config/rofi/powermenu/powermenu.sh
 # File Managers
 bindsym $mod+Alt+E exec thunar
 # Browsers
-bindsym $mod+Alt+F exec waterfox
+bindsym $mod+Alt+F exec firefox-bin
 # IDEs
 #bindsym $mod+M exec kitty -e env ~/.local/bin/lv
 bindsym $mod+M exec kitty -e env ~/.local/bin/nvim
+bindsym $mod+Alt+Z exec zedit
 # Notes
 bindsym $mod+N exec ~/Apps/Obsidian/Obsidian-1.12.7.AppImage
 # Htop

@@ -188,10 +188,11 @@ Module-Right:
     "bluetooth": {
         "format": "󰂯",
         "format-connected": "󰂱",
-        "format-connected-battery": "󰥉 {device_alias} {device_battery_percentage}%",
+        "format-connected-battery": " {device_battery_percentage}%",
+        //"format-connected-battery": "󰥉 {device_alias} {device_battery_percentage}%",
         "format-disabled": "󰂲",
         "on-click": "blueman-manager",
-        "tooltip-format": " Bluetooth: {status}\n󰾰 {num_connections} devices connected",
+        "tooltip-format": " Bluetooth: {status}\n󰾰 {num_connections} devices connected \n󰂳 {device_alias}",
         "on-scroll-up": "", 
         "on-scroll-down": ""
     },
@@ -211,7 +212,7 @@ Module-Right:
         "on-click-middle": "powerprofilesctl set balanced",
         //"tooltip-format": "󰂁 Capacity: {capacity}% \n󰔟 Uptime: {time}",
         "tooltip-format": "󰄌 <span color='#99ffdd'>Watts:</span> <span color='#ffead3'>{power}</span>  \n󰔟 <span color='#99ffdd'>Uptime:</span> <span color='#ffead3'>{time}</span> \n󱈑 <span color='#99ffdd'>Health:</span> <span color='#ffead3'>{health}%</span>",
-        "on-scroll-up": "", 
+        "on-scroll-up": "",
         "on-scroll-down": ""
     },
 
