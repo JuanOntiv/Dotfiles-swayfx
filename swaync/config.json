@@ -16,7 +16,6 @@
     "notification-body-image-width": 200,
 
     "timeout": 4,
-    "relative-timestamps": false,
     "timeout-low": 4,
     "timeout-critical": 6,
 
@@ -46,13 +45,37 @@
 
 
     "widgets": [
-        "title",
-        "dnd",
-        "notifications",
-        "mpris"
+         "title",
+         "dnd",
+         "notifications",
+         "mpris",
+         "backlight",
+         "slider#red-filter",
+         "slider#darkness-filter"
     ],
 
     "widget-config": {
+        "backlight": {
+            "label": "󰃠"
+        },
+        "slider#red-filter": {
+            "label": "",
+            "cmd_setter": "~/.config/swaync/scripts/gammastep-night.sh set-temp $value",
+            "cmd_getter": "~/.config/swaync/scripts/gammastep-night.sh get-temp",
+            "min": 2500,
+            "max": 6500,
+            "min_limit": 2500,
+            "max_limit": 6500
+        },
+        "slider#darkness-filter": {
+            "label": "󰃟",
+            "cmd_setter": "~/.config/swaync/scripts/gammastep-night.sh set-gamma $value",
+            "cmd_getter": "~/.config/swaync/scripts/gammastep-night.sh get-gamma",
+            "min": 50,
+            "max": 100,
+            "min_limit": 50,
+            "max_limit": 100
+        },
         "title": {
             "text": "Notifications",
             "clear-all-button": true,

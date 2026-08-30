@@ -15,7 +15,7 @@
 @define-color warning-bg #fabd2f;
 
 * {
-    font-family: "FiraCode Nerd Font Propo", "Noto Emoji", sans-serif;
+    font-family: "Noto Emoji", sans-serif;
 }
 
 
@@ -188,11 +188,11 @@
 .notification-row .notification-background .notification .notification-default-action .notification-content .text-box .time {
     font-family: "FiraCode Nerd Font Propo", "Noto Emoji", sans-serif;
     font-weight: 600;
-    font-size: 0.85rem;
+    font-size: 1.0rem;
     background: transparent;
     color: @text-main;
     text-shadow: none;
-    margin-right: 20px;
+    margin-right: 0px;
 }
 
 
@@ -234,3 +234,55 @@
     margin: 8px 0 0 12px;
 }
 
+
+/* Compact controls for brightness and night filters */
+.widget-slider,
+.widget-backlight {
+    margin: 2px 8px;
+    padding: 4px 8px;
+    background: @bg-card;
+    border: 1px solid @accent-primary;
+    border-radius: 10px;
+}
+
+.widget-slider > label,
+.widget-backlight > label {
+    min-width: 28px;
+    margin-right: 8px;
+    color: @text-main;
+    font-family: "FiraCode Nerd Font", "Noto Sans", sans-serif;
+    font-size: 1.15rem;
+}
+
+.widget-slider scale,
+.widget-backlight scale {
+    min-height: 14px;
+}
+
+.widget-slider scale trough,
+.widget-backlight scale trough {
+    min-height: 8px;
+    border-radius: 8px;
+    background: @bg-hover;
+}
+
+.widget-slider scale trough highlight,
+.widget-backlight scale trough highlight {
+    min-height: 8px;
+    border-radius: 8px;
+    background: @accent-secondary;
+}
+
+.widget-slider scale slider,
+.widget-backlight scale slider {
+    min-width: 14px;
+    min-height: 14px;
+    border-radius: 50%;
+    background: @text-main;
+    border: 2px solid @accent-secondary;
+}
+
+.widget-slider:hover,
+.widget-backlight:hover {
+    border-color: @accent-secondary;
+}
