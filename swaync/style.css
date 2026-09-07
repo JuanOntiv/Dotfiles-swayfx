@@ -34,7 +34,80 @@
 }
 
 
-/* Título y Header */
+.widget-label {
+    margin: 4px 8px 0;
+    padding: 0 12px 4px;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    color: @accent-secondary;
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 0.06em;
+    text-shadow: 0 0 6px rgba(238, 51, 51, 0.45);
+    halign: center;
+    xalign: 0.5;
+    justify: center;
+}
+
+.quick-controls-separator {
+    margin: 12px 8px 6px;
+    padding: 0;
+    color: @accent-secondary;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+    text-shadow: none;
+    hexpand: true;
+    halign: fill;
+    xalign: 0.5;
+}
+
+.widget-buttons,
+.quick-controls {
+    margin: 0 8px;
+    padding: 5px 4px 7px;
+    background: transparent;
+    border: none;
+}
+
+.widget-buttons button,
+.quick-controls button {
+    background: @bg-card;
+    color: @text-main;
+    border: 1px solid @accent-secondary;
+    border-radius: 8px;
+    padding: 5px 10px;
+    transition: all 200ms ease-in-out;
+}
+
+.widget-buttons flowbox > flowboxchild > button,
+.quick-controls flowbox > flowboxchild > button {
+    min-height: 42px;
+    min-width: 0;
+    margin: 3px;
+    padding: 7px 12px;
+    background: rgba(35, 30, 45, 0.72);
+    color: @text-main;
+    border: 1px solid rgba(128, 128, 128, 0.55);
+    border-bottom: 3px solid @accent-primary;
+    border-radius: 6px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.25);
+    transition: all 200ms ease-in-out;
+}
+
+.widget-buttons flowbox > flowboxchild > button:hover,
+.widget-buttons flowbox > flowboxchild > button.active,
+.quick-controls flowbox > flowboxchild > button:hover,
+.quick-controls flowbox > flowboxchild > button.active {
+    background: @accent-secondary;
+    color: @bg-window;
+    border-color: @accent-secondary;
+    box-shadow: 0 0 8px @accent-secondary;
+}
+
 .widget-title {
     color: @accent-secondary;
     font-size: 1.4rem;
@@ -97,11 +170,11 @@
 
 /* --- WIDGET MPRIS (REPRODUCTOR) --- */
 .widget-mpris {
-    background: @bg-card;
+    background: transparent;
     border-radius: 8px;
-    margin: 0;
+    margin: 12px 4px 0;
     margin-bottom: 0;
-    min-height: 180px;
+    min-height: 130px;
 }
 
 .widget-mpris-player {
@@ -143,12 +216,17 @@
 /*------------------------------------------------------ 
  *  NOTIFICACIONES 
  * ---------------------------------------------------*/
+.widget-notifications {
+    min-height: 420px;
+}
+
 .notification {
     background: @bg-window;
     border: 1px solid @accent-primary;
     border-radius: 8px;
-    margin: 8px;
+    margin: 6px 4px;
     padding: 10px;
+    min-height: 92px;
     transition: transform 0.2s ease;
 }
 
@@ -239,10 +317,17 @@
 .widget-slider,
 .widget-backlight {
     margin: 2px 8px;
-    padding: 4px 8px;
-    background: @bg-card;
-    border: 1px solid @accent-primary;
-    border-radius: 10px;
+    padding: 3px 8px;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+}
+
+.widget-slider:last-child,
+.widget-backlight:last-child {
+    border-radius: 0 0 10px 10px;
+    border-bottom: 1px solid @accent-primary;
+    margin-bottom: 0;
 }
 
 .widget-slider > label,
@@ -256,27 +341,27 @@
 
 .widget-slider scale,
 .widget-backlight scale {
-    min-height: 14px;
+    min-height: 10px;
 }
 
 .widget-slider scale trough,
 .widget-backlight scale trough {
-    min-height: 8px;
+    min-height: 3px;
     border-radius: 8px;
     background: @bg-hover;
 }
 
 .widget-slider scale trough highlight,
 .widget-backlight scale trough highlight {
-    min-height: 8px;
+    min-height: 3px;
     border-radius: 8px;
     background: @accent-secondary;
 }
 
 .widget-slider scale slider,
 .widget-backlight scale slider {
-    min-width: 14px;
-    min-height: 14px;
+    min-width: 8px;
+    min-height: 8px;
     border-radius: 50%;
     background: @text-main;
     border: 2px solid @accent-secondary;

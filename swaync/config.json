@@ -5,7 +5,7 @@
 	  "cssPriority": "user",
 
     "control-center-width": 420,
-    "control-center-height": 760, 
+    "control-center-height": -1,
     "control-center-margin-top": 2,
     "control-center-margin-bottom": 2,
     "control-center-margin-right": 1,
@@ -49,12 +49,41 @@
          "dnd",
          "notifications",
          "mpris",
+         "label#quick-controls-separator",
+         "buttons-grid#quick-controls",
          "backlight",
          "slider#red-filter",
          "slider#darkness-filter"
     ],
 
     "widget-config": {
+        "label#quick-controls-separator": {
+            "text": "     ────────  Quick controls  ────────"
+        },
+        "buttons-grid#quick-controls": {
+            "buttons-per-row": 4,
+            "actions": [
+                {
+                    "label": "󰂯",
+                    "command": "blueman-manager"
+                },
+                {
+                    "label": "",
+                    "command": "kitty -e nmtui"
+                },
+                {
+                    "label": "󰁹",
+                    "command": "powerprofilesctl set power-saver"
+                },
+                {
+                    "label": "󰃟",
+                    "command": "~/.config/swaync/scripts/gammastep-night.sh toggle",
+                    "type": "toggle",
+                    "update-command": "~/.config/swaync/scripts/gammastep-night.sh enabled",
+                    "active": true
+                }
+            ]
+        },
         "backlight": {
             "label": "󰃠"
         },
